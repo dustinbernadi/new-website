@@ -48,6 +48,10 @@ body {
   margin: 0 0.5rem;
 }
 
+.navbar .navbar-extra {
+  color: black;
+}
+
 .navbar .navbar-nav a:hover {
   color: var(--primary);
 }
@@ -71,7 +75,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("bible-bg.jpg");
+  background-image: url("/img/bible-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -148,16 +152,63 @@ body {
 .item img {
   max-width: 100%; /* Make sure images are responsive */
   height: auto; /* Maintain aspect ratio */
+  padding-top: 3em; /*making the gap between the img and the text*/
 }
 
-/* Responsif untuk layar kecil seperti mobile */
+/*media queries*/
+
+/*responsive untuk layar lebar seperti laptop*/
+@media (max-width: 1366px) {
+  html {
+    font-size: 90%;
+  }
+
+  #menu {
+    display: none; /*menu tidak ditampilkan di layar lebar*/
+  }
+}
+
+/* Responsif untuk layar kecil seperti tablet */
 @media (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+
+  h1 {
+    font-size: 120%;
+  }
+
+  #menu {
+    display: none; /*menu tidak ditampilkan di layar lebar*/
+  }
+
   .container {
     display: block; /* Mengubah layout menjadi vertikal di layar kecil */
   }
 
   .item {
     margin: 10px 0; /* Jarak antar item di layar kecil */
+  }
+}
+
+/*responsive untuk  layar medium seperti mobile*/
+@media (max-width: 425px) {
+  html {
+    font-size: 70%;
+  }
+
+  #menu {
+    display: inline-block;
+    color: black;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 30rem;
+    height: 100vh;
   }
 }
 
@@ -207,6 +258,7 @@ body {
   border: solid;
   border-color: #f8de88;
   border-top-left-radius: 20%;
+  padding: 3rem;
 }
 
 .icon a {
